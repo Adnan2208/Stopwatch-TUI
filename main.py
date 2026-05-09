@@ -1,6 +1,12 @@
-def main():
-    print("Hello from stopwatch!")
+from textual.app import App
+from textual.widgets import Header,Footer
+
+class Stopwatch(App):
+    def compose(self):
+        yield Header()
+        yield Footer()
 
 
 if __name__ == "__main__":
-    main()
+    stopwatchObject = Stopwatch()
+    stopwatchObject.run()
