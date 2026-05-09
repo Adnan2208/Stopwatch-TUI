@@ -1,5 +1,14 @@
 from textual.app import App
-from textual.widgets import Header,Footer
+from textual.widgets import Header,Footer,Static,Button
+
+
+# Creating a custom widget:
+class CustomStopwatchWidget(Static):
+    # Static is similar to a div (Inherit it to build a custom widget)
+    def compose(self):
+        yield Button("Start",variant="success")
+        yield Button("Stop",variant="error")
+
 
 class Stopwatch(App):
     # BINDINGS, takes an array of tuples which represent the key bindings of the tui
@@ -10,6 +19,7 @@ class Stopwatch(App):
     def compose(self):
         yield Header()
         yield Footer()
+        yield CustomStopwatchWidget()
 
     # You need to specify action_ while creating action function.
     # You can omit the action_ prefix while mentioning them in the BINDINGS
