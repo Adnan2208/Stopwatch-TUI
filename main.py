@@ -22,6 +22,8 @@ class Stopwatch(App):
         ("d","toggleDarkMode","This is a method that is used to toggle dark and light modes")
     ]
 
+    CSS_PATH = "stopwatch.tcss"
+
     def compose(self):
         yield Header()
         yield Footer()
