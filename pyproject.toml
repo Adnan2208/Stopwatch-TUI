@@ -1,9 +1,14 @@
 [project]
 name = "stopwatch"
 version = "0.1.0"
-description = "A basic stopwatch tui built using python"
+description = "A simple stopwatch tui built using textual"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
-    "textual>=8.2.5",
+    "textual>=8.2.7",
+]
+
+[dependency-groups]
+dev = [
+    "textual-dev>=1.8.0",
 ]
