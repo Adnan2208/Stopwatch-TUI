@@ -1,5 +1,9 @@
 from textual.app import App
 from textual.widgets import Header,Footer,Static,Button
+from textual.containers import ScrollableContainer
+
+class StopwatchTime(Static):
+    pass
 
 
 # Creating a custom widget:
@@ -8,6 +12,8 @@ class CustomStopwatchWidget(Static):
     def compose(self):
         yield Button("Start",variant="success")
         yield Button("Stop",variant="error")
+        yield Button("Reset")
+        yield StopwatchTime("00:00:00.00")
 
 
 class Stopwatch(App):
@@ -19,7 +25,10 @@ class Stopwatch(App):
     def compose(self):
         yield Header()
         yield Footer()
-        yield CustomStopwatchWidget()
+        # This will put the CustomStopWatchWidget inside the container so that we can get auto scrollbars and handle them together.
+        with ScrollableContainer(id="stopwatches"):
+            yield CustomStopwatchWidget()
+            yield CustomStopwatchWidget()
 
     # You need to specify action_ while creating action function.
     # You can omit the action_ prefix while mentioning them in the BINDINGS
