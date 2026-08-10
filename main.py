@@ -10,9 +10,9 @@ class StopwatchTime(Static):
 class CustomStopwatchWidget(Static):
     # Static is similar to a div (Inherit it to build a custom widget)
     def compose(self):
-        yield Button("Start",variant="success")
-        yield Button("Stop",variant="error")
-        yield Button("Reset")
+        yield Button("Start",variant="success",id="startButton")
+        yield Button("Stop",variant="error",id="stopButton")
+        yield Button("Reset",id="resetButton")
         yield StopwatchTime("00:00:00.00")
 
 
