@@ -31,6 +31,7 @@ class Stopwatch(App):
         with ScrollableContainer(id="stopwatches"):
             yield CustomStopwatchWidget()
             yield CustomStopwatchWidget()
+            yield CustomStopwatchWidget()
 
     # You need to specify action_ while creating action function.
     # You can omit the action_ prefix while mentioning them in the BINDINGS
